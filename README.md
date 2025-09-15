@@ -13,6 +13,6 @@ A pure Python implementation of a Bayesian Network for the rain-maintenance-trai
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/bayesian-network-project.git
+git clone https://github.com/sigonebyexample/bayesian-network-project.git
 cd bayesian-network-project
 pip install -e .
