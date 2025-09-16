@@ -18,6 +18,7 @@ cd bayesian-network-project
 pip install -e .
 ```
 ## Project Structure
+``` bash
 src/
 ├── model.py          # Network structure and nodes
 ├── inference.py      # Prediction and evidence handling
@@ -27,6 +28,7 @@ src/
 examples/            # Usage examples
 tests/               # Unit tests
 docs/                # Documentation
+```
 ## Running Examples
 ``` bash
 # Basic usage
