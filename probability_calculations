@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+"""
+Probability calculation examples for the Bayesian Network.
+"""
+
+from src.probability import ProbabilityCalculator
+
+def main():
+    print("=== Probability Calculation Examples ===")
+    
+    probability = ProbabilityCalculator()
+    
+    # Various probability calculations
+    calculations = [
+        # Joint probabilities
+        ({"rain": "none", "maintenance": "yes", "train": "on time", "appointment": "attend"}, "Full joint probability"),
+        ({"rain": "heavy", "train": "delayed"}, "Partial joint probability"),
+        ({"appointment": "miss"}, "Marginal probability"),
+        
+        # Conditional probabilities
+        ({"rain": "heavy"}, {"train": "delayed"}, "Conditional: rain | train"),
+        ({"appointment": "attend"}, {"rain": "none", "maintenance": "no"}, "Conditional: appointment | rain, maintenance"),
+        ({"maintenance": "yes"}, {"rain": "light"}, "Conditional: maintenance | rain")
+    ]
+    
+    for calc in calculations:
+        if len(calc) == 2:
+            evidence, description = calc
+            result = probability.joint_probability(evidence)
+            print(f"{description}: {result:.6f}")
+        else:
+            query, given, description = calc
+            result = probability.conditional_probability(query, given)
+            print(f"{description}: {result:.4f}")
+
+if __name__ == "__main__":
+    main()
