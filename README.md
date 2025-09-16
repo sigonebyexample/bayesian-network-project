@@ -44,3 +44,9 @@ python examples/probability_calculations.py
 ``` bash
 python -m unittest discover tests
 ```
+## Quick Demo
+
+For a quick demonstration, run:
+
+```bash
+python demo.py
