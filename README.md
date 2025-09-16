@@ -1,18 +1,23 @@
-# Bayesian Network Implementation
+# Examples Guide
 
-A pure Python implementation of a Bayesian Network for the rain-maintenance-train-appointment scenario.
+## Basic Usage
 
-## Features
+```python
+from src.inference import InferenceEngine
+from src.probability import ProbabilityCalculator
 
-- **Pure Python**: No external dependencies required
-- **Flexible Inference**: Handle any combination of evidence
-- **Probability Calculations**: Joint, conditional, and marginal probabilities
-- **Well-tested**: Comprehensive test suite
-- **Modular Design**: Easy to extend and modify
+# Initialize
+inference = InferenceEngine()
+probability = ProbabilityCalculator()
 
-## Installation
+# Simple prediction
+inference.display_predictions({"train": "delayed"})
 
-```bash
-git clone https://github.com/sigonebyexample/bayesian-network-project.git
-cd bayesian-network-project
-pip install -e .
+# Joint probability
+prob = probability.joint_probability({
+    'rain': 'none',
+    'maintenance': 'no',
+    'train': 'on time',
+    'appointment': 'attend'
+})
+```
